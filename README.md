@@ -37,8 +37,6 @@ plusvalia-comunas-chile/
 │   │   ├── permisos/
 │   │   └── servicios/
 │   └── processed/
-│       ├── plusvalia_valdivia.geojson
-│       └── plusvalia_valdivia.parquet
 ├── etl/
 │   ├── extract_avaluos.py
 │   ├── process_manzanas.py
@@ -83,6 +81,21 @@ Incluye:
      jupyter notebook
      ```
    - Abre `notebooks/plusvalia_visualizacion.ipynb` para explorar el mapa interactivo.
+
+## **Visualización del Mapa de Plusvalía**
+
+Este proyecto incluye un **mapa interactivo** que permite visualizar de manera geográfica el potencial de plusvalía inmobiliaria en la comuna de **Valdivia** (en esta primera versión).
+
+El mapa muestra:
+- **Manzanas censales** coloreadas según su *score* de plusvalía, usando una escala de colores que va desde 🟩 *baja* a 🟥 *alta*.
+- **Servicios públicos** (colegios, centros de salud, bomberos, etc.) representados como puntos azules.
+- Una **leyenda visual** para interpretar los colores y símbolos del mapa.
+
+Este mapa facilita la identificación de zonas con mayor potencial de valorización, útil para decisiones de inversión, planificación urbana o análisis territorial.
+
+### 🗺️ Mapa generado
+
+![Mapa de Plusvalía Valdivia](images/mapa_plusvalia_valdivia.png)
 
 ## 📈 Próximos pasos
 
