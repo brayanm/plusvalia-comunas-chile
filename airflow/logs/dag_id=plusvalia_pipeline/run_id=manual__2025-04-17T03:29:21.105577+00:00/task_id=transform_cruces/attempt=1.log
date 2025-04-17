@@ -1,0 +1,21 @@
+[2025-04-17T03:31:26.841+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-04-17T03:31:26.904+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: plusvalia_pipeline.transform_cruces manual__2025-04-17T03:29:21.105577+00:00 [queued]>
+[2025-04-17T03:31:26.926+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: plusvalia_pipeline.transform_cruces manual__2025-04-17T03:29:21.105577+00:00 [queued]>
+[2025-04-17T03:31:26.928+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-04-17T03:31:26.955+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_cruces> on 2025-04-17 03:29:21.105577+00:00
+[2025-04-17T03:31:26.969+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'plusvalia_pipeline', 'transform_cruces', 'manual__2025-04-17T03:29:21.105577+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/plusvalia_pipeline_dag.py', '--cfg-path', '/tmp/tmpu3bnm2cm']
+[2025-04-17T03:31:26.973+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask transform_cruces
+[2025-04-17T03:31:26.978+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=286) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-17T03:31:26.980+0000] {standard_task_runner.py:63} INFO - Started process 288 to run task
+[2025-04-17T03:31:27.052+0000] {task_command.py:426} INFO - Running <TaskInstance: plusvalia_pipeline.transform_cruces manual__2025-04-17T03:29:21.105577+00:00 [running]> on host ee6c3cbd6aa6
+[2025-04-17T03:31:27.226+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Brayan Miranda' AIRFLOW_CTX_DAG_ID='plusvalia_pipeline' AIRFLOW_CTX_TASK_ID='transform_cruces' AIRFLOW_CTX_EXECUTION_DATE='2025-04-17T03:29:21.105577+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-17T03:29:21.105577+00:00'
+[2025-04-17T03:31:27.228+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-04-17T03:31:27.248+0000] {logging_mixin.py:188} INFO - Procesando cruces y cálculo de score...
+[2025-04-17T03:31:29.839+0000] {raw.py:723} INFO - Created 2,345 records
+[2025-04-17T03:31:30.067+0000] {logging_mixin.py:188} INFO - Datos procesados y guardados en data/processed/
+[2025-04-17T03:31:30.074+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-04-17T03:31:30.075+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-04-17T03:31:30.090+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=plusvalia_pipeline, task_id=transform_cruces, run_id=manual__2025-04-17T03:29:21.105577+00:00, execution_date=20250417T032921, start_date=20250417T033126, end_date=20250417T033130
+[2025-04-17T03:31:30.161+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-04-17T03:31:30.191+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-17T03:31:30.212+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

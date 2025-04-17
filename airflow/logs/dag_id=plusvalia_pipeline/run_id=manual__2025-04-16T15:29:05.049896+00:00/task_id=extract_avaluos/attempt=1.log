@@ -1,0 +1,40 @@
+[2025-04-16T15:29:08.594+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-04-16T15:29:08.688+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: plusvalia_pipeline.extract_avaluos manual__2025-04-16T15:29:05.049896+00:00 [queued]>
+[2025-04-16T15:29:08.710+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: plusvalia_pipeline.extract_avaluos manual__2025-04-16T15:29:05.049896+00:00 [queued]>
+[2025-04-16T15:29:08.711+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-04-16T15:29:08.746+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_avaluos> on 2025-04-16 15:29:05.049896+00:00
+[2025-04-16T15:29:08.762+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'plusvalia_pipeline', 'extract_avaluos', 'manual__2025-04-16T15:29:05.049896+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/plusvalia_pipeline_dag.py', '--cfg-path', '/tmp/tmpbnjuav2a']
+[2025-04-16T15:29:08.768+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_avaluos
+[2025-04-16T15:29:08.769+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=178) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-16T15:29:08.773+0000] {standard_task_runner.py:63} INFO - Started process 180 to run task
+[2025-04-16T15:29:08.851+0000] {task_command.py:426} INFO - Running <TaskInstance: plusvalia_pipeline.extract_avaluos manual__2025-04-16T15:29:05.049896+00:00 [running]> on host 2dfc04315afd
+[2025-04-16T15:29:09.031+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Brayan Miranda' AIRFLOW_CTX_DAG_ID='plusvalia_pipeline' AIRFLOW_CTX_TASK_ID='extract_avaluos' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T15:29:05.049896+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-16T15:29:05.049896+00:00'
+[2025-04-16T15:29:09.034+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-04-16T15:29:09.147+0000] {logging_mixin.py:188} INFO - Extrayendo avalúos desde PDF...
+[2025-04-16T15:29:09.148+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-04-16T15:29:09.149+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/etl/extract_avaluos.py", line 11, in extract_avaluos
+    with open("config/config.yaml") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'
+[2025-04-16T15:29:09.167+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=plusvalia_pipeline, task_id=extract_avaluos, run_id=manual__2025-04-16T15:29:05.049896+00:00, execution_date=20250416T152905, start_date=20250416T152908, end_date=20250416T152909
+[2025-04-16T15:29:09.187+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 2 for task extract_avaluos ([Errno 2] No such file or directory: 'config/config.yaml'; 180)
+[2025-04-16T15:29:09.205+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-04-16T15:29:09.259+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-16T15:29:09.261+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

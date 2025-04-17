@@ -1,0 +1,14 @@
+comuna_objetivo: "VALDIVIA"
+
+# Buffer de proximidad para servicios (en metros)
+buffer_metros: 300
+
+# Sistema de coordenadas proyectado (UTM zona 18S para Valdivia)
+crs_utm: 32718
+
+# Patrón de extracción desde PDF (parametrizable por comuna)
+pattern_avaluos: '({comuna})\s+(\d+)\s+(\d+)\s+([\d\.]+|0)\s+([\d\.,]+|0,00)\s+(\d{{2}}-\d{{2}}-\d{{4}})'
+
+# Rutas de salida por defecto (usadas por los ETL)
+output_geojson: "data/processed/plusvalia_valdivia.geojson"
+output_parquet: "data/processed/plusvalia_valdivia.parquet"
