@@ -1,0 +1,19 @@
+# Ignorar archivos y carpetas de sistema
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Airflow logs
+logs/
+
+# Entornos virtuales
+venv/
+.env/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Otros
+*.log

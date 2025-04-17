@@ -95,7 +95,7 @@ Este mapa facilita la identificación de zonas con mayor potencial de valorizaci
 
 ### 🗺️ Mapa generado
 
-![Mapa de Plusvalía Valdivia](images/mapa_plusvalia_valdivia.png)
+![Mapa de Plusvalía Valdivia](airflow/images/mapa_plusvalia_valdivia.png)
 
 ## 📈 Próximos pasos
 
